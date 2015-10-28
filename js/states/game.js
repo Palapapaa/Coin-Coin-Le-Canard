@@ -10,6 +10,8 @@ var gameState = {
     },
 
     create : function(){
+       this.randomGenerator = new Phaser.RandomDataGenerator(1337);
+
       this.canard = game.add.sprite(100,100,"canard_template1");
       this.coin = game.add.audio("sound_coin1");
 
@@ -26,6 +28,10 @@ var gameState = {
 
     playCoin: function(){
       this.coin.play();
+
+      this.canard.x = this.randomGenerator.integerInRange(0,650);
+      this.canard.y = this.randomGenerator.integerInRange(0,450);
+
     }
 
 };
