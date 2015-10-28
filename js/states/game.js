@@ -14,8 +14,8 @@ var gameState = {
       this.coin = game.add.audio("sound_coin1");
 
       this.coin.play();
-
-      this.canard.events.onInputDown.add(playCoin, this);
+      this.canard.inputEnabled = true;
+      this.canard.events.onInputDown.add(this.playCoin, this);
 
     },
 
